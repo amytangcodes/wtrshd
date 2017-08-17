@@ -6,21 +6,35 @@ import Search from './components/Search';
 
 class App extends Component {
   render() {
+    const location = {
+      lat: 40.7575285,
+      lng: -73.9884469
+    }
+
+    const markers = [
+      {
+        location: {
+          lat: 40.7575285,
+          lng: -73.9884469
+        }
+      }
+    ]
+
     return (
       <div className="App">
         <div className="App-header">
           <h2>Watershed App</h2>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <div className="row">
             <div className="col-md-9">
-              <Map />
+              <Map center={location} markers={markers} />
             </div>
             <div className="col-md-3">
               <Search />
             </div>
           </div>
-        </p>
+        </div>
       </div>
     );
   }
